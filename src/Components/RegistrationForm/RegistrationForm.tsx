@@ -22,15 +22,27 @@ const RegistrationForm: React.FC =()=>
         e.preventDefault();
 
         if (!nameError && !emailError && !passwordError && !confirmPasswordError && password === confirmPassword) {
-            alert('Регистрация прошла успешно!');
-        const user = {
-            name,
-            email,
-            password,
-        };
-        const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
-        existingUsers.push(user);
-        localStorage.setItem('users', JSON.stringify(existingUsers));
+
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const user = users.find((u: any) => u.email === email);
+
+            if(user!=null){
+                alert("этот Email уже занят");
+                
+            }else{
+
+                alert('Регистрация прошла успешно!');
+                const user = {
+                    name,
+                    email,
+                    password,
+                };
+                const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
+                existingUsers.push(user);
+                localStorage.setItem('users', JSON.stringify(existingUsers));
+            }
+
+
 
         } else {
             if (password !== confirmPassword) {
