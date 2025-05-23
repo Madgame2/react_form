@@ -18,7 +18,7 @@ const EmailInput: React.FC<EmailInputProps> = ({
 }) => {
     const [email, setEmail] = useState(value);
     const [internalError, setInternalError] = useState('');
-    const errorToShow = error !== undefined ? error : internalError;
+    const errorToShow = error || internalError; 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = e.target.value;

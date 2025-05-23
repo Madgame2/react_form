@@ -43,11 +43,10 @@ const LogIn:React.FC =()=>{
     }
 
     const EmailChanged=(value:string)=>{
-        setPasswordError('')
-        setPassword(value)
+        setEmail(value)
     }
 
-          const isFormValid =
+    const isFormValid =
     Email&&
     Password;
 
