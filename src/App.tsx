@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import RegistrationForm from './Components/RegistrationForm/RegistrationForm';
+import Base_Loyout from './Components/Layout/Loyout';
+import Header from './Components/Header/Header';
+import LogIn from './Components/LogInForm/LogIn';
+import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
 
-function App() {
+const App: React.FC = () => {
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Base_Loyout header={<Header onSelectSection={() => {}} />}>
+      <Routes>
+        <Route path='/login' element={<LogIn />} />
+        <Route path='/signIn' element={<RegistrationForm />} />
+        <Route path='/forgotPasword' element={<ForgotPassword/>}/>
+      </Routes>
+    </Base_Loyout>
   );
-}
+};
 
 export default App;

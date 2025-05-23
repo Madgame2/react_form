@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  max-width: 300px;
+  margin: auto;
+}
+
+.input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  width: 250px;
+  transition: border-color 0.3s;
+}
+
+.input:focus {
+  border-color: #66afe9;
+  outline: none;
+}
+
+.inputError {
+  border-color: #e74c3c;
+}
+
+.errorText {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}

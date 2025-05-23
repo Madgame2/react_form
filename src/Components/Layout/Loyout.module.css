@@ -1,0 +1,11 @@
+.Contaner{
+    display: flex;
+    flex-direction: column;
+}
+
+.main{
+   flex: 1;  
+   min-height: 90vh;
+   justify-content: center;
+   display: flex;
+}
